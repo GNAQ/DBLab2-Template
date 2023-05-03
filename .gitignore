@@ -1,0 +1,13 @@
+docs/
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.ppt
+*.png
+*.jpg
+*.jpeg
+*.csv
+*.in
+*.out
+*.tmp

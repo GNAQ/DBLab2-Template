@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.out": "plaintext",
+		"iostream": "cpp"
+	}
+}
