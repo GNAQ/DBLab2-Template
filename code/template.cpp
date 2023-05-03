@@ -12,10 +12,7 @@
 using std::cout, std::endl, std::string, std::vector, std::pair;
 using ll = long long;
 
-constexpr int LINE_COUNT = 100000000;
-
-int ways, mem_lim;
-int cycle_count;
+int mem_lim;
 string infile;
 string tf[2] = {"1.tmp", "2.tmp"};
 vector<pair<int, int>> partitions[2];
@@ -128,24 +125,20 @@ void execMerge() {
 }
 
 int main(int argc, char *argv[]) {
-	if (argc < 3) {
-		cout << "Please run with 3 arguments in order: ways= mem= (in MB) file=" << endl;
+	if (argc < 2) {
+		cout << "Please run with 2 arguments in order: mem= (in MB) file=" << endl;
 		return 0;
 	}
 	string arg1 = string(argv[1]), arg2 = string(argv[2]);
-	string arg3 = string(argv[3]);
-	if (arg1.substr(0, 4) == "ways" && arg2.substr(0, 3) == "mem" && 
-	  arg3.substr(0, 4) == "file") {
+	if (arg1.substr(0, 3) == "mem" && arg2.substr(0, 4) == "file") {
 		
-		ways = std::stoi(arg1.substr(5));
-		mem_lim = std::stoi(arg2.substr(4));
-		infile = arg3.substr(5);
+		mem_lim = std::stoi(arg1.substr(4));
+		infile = arg2.substr(5);
 		
-		cout << "Sorting file " << infile << " with merge ways = " << ways 
-			 << " and memory limit " << mem_lim << " MB" << endl;
+		cout << "Sorting file " << infile << " with memory limit " << mem_lim << " MB" << endl;
 	}
 	else {
-		cout << "Please run with 3 arguments in order: ways= mem= (in MB) file=" << endl;
+		cout << "Please run with 2 arguments in order: mem= (in MB) file=" << endl;
 		return 0;
 	}
 	
